@@ -1,0 +1,35 @@
+.post .stats .icon, .post .stats .icon, .table .iva_btn, .table .iva_btn:hover, .iva_vc_row .contact_form input[type="text"]:focus, 
+.iva_vc_row .contact_form textarea:focus, .iva_vc_row .contact_form select:focus, .iva_vc_row .iva_mc_form_wrapper input[type="text"]:focus, 
+.iva_vc_row .iva_mc_form_wrapper input[type="submit"], #portfolio-single #images .owl-pagination .owl-page.active span, #tags a:hover, 
+#comment input[type="text"]:focus, #comment input[type="email"]:focus, #comment textarea:focus, #comment input[type="submit"]:hover, 
+.post .iva_btn, .iva_btn, .btn-holder .vc_btn.iva_btn, .iva_vc_row .contact_form input[type="email"]:focus {
+    border: 1px solid #f64747;
+}
+.section-title:after, .progress-bar > span, .stats .icon:hover, .table .iva_btn:hover, .table .iva_btn.fill, #blog .loadmore, 
+.iva_vc_row .contact_form input[type="submit"]:hover, .iva_vc_row .iva_mc_form_wrapper input[type="submit"], #social:before, 
+#portfolio-single h1#portfolio-title:after, #portfolio-single #images .owl-pagination .owl-page.active span, #menu-toggle, 
+#menu-toggle:after, #menu-toggle:before, .iva_btn:hover, .post .iva_btn:hover, #comments .more:hover, #comment input[type="submit"]:hover, 
+.iva.vc_progress_bar .vc_single_bar .vc_bar, .iva_btn.vc_btn, .btn-holder .vc_btn.iva_btn:hover {
+    background: #f64747;
+}
+.iva_btn:hover, .post .iva_btn:hover, .bar .big_white, .choco .big_white {
+    border-color: #f64747;
+}
+a, header nav a:hover, header nav a.active, #header-section.altmenu ul li a:hover, .post .iva_btn, .iva_btn, 
+.hero-single .meta span:after, .big_white span, .iva_vc_row .iva-box i, ul.filter > li.active a, ul.filter > li a:hover, 
+ul.filter-target > li.active a, ul.filter-target > li a:hover, .stats .number, .iva_vc_row .port-filter li a:hover, 
+.iva_vc_row .port-filter li.active a, .table .price, .table .iva_btn, .table .iva_btn.fill:hover, .iva_vc_row .iva-box-2 i, 
+.iva_vc_row .team-members .team-image a:hover, .iva_vc_row .cta .iva_btn:hover, #posts .single-blog-post a:hover, #blog .loadmore:hover, 
+.iva_vc_row .twitter .tweet-actions li a, .iva_vc_row .contact_form .forms .column.four:after, .iva_vc_row .iva_mc_form_wrapper .mc_email_wrapper:after, 
+.iva_vc_row .contact_form .forms .column.twelve:after, .iva_vc_row .contact_form .column > a:hover, 
+.iva_vc_row .contact_form i, footer .block a:hover, footer #copyright i, .post a, p.bigletter:first-letter, #tags a:hover, 
+#pagination a:hover, #user .social a:hover, .tabable .tabs li a:hover, .tabable .tabs li.active a, .wpb_tabs_nav li a:hover, 
+.wpb_tabs_nav li.ui-tabs-active a, .wpb_accordion .wpb_accordion_section .wpb_accordion_header.ui-accordion-header-active a,
+.wpb_accordion .wpb_accordion_section .wpb_accordion_header a:hover, 
+.btn-holder .vc_btn.iva_btn, .spa .big_white, .bar .big_white, .choco .big_white, .page-template-default #header-section.inside-menu .menu > ul > li > a:hover, 
+#header-section.inside-menu ul li a:hover, .msSlider a.slide-move:hover, #sidebar .widget a:hover,.hero-single .meta a:hover {
+    color: #f64747;
+}
+blockquote {
+    border-left: 1px solid #f64747;
+}

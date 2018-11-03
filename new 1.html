@@ -1,0 +1,1026 @@
+<html class="js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage no-websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients no-cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg no-smil svgclippaths"><!--<![endif]--><head><style title="audiojs" type="text/css">        .audiojs audio { position: absolute; left: -1px; }         .audiojs { width: 460px; height: 36px; background: #404040; overflow: hidden; font-family: monospace; font-size: 12px;           background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #444), color-stop(0.5, #555), color-stop(0.51, #444), color-stop(1, #444));           background-image: -moz-linear-gradient(center top, #444 0%, #555 50%, #444 51%, #444 100%);           -webkit-box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.3); -moz-box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.3);           -o-box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.3); box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.3); }         .audiojs .play-pause { width: 25px; height: 40px; padding: 4px 6px; margin: 0px; float: left; overflow: hidden; border-right: 1px solid #000; }         .audiojs p { display: none; width: 25px; height: 40px; margin: 0px; cursor: pointer; }         .audiojs .play { display: block; }         .audiojs .scrubber { position: relative; float: left; width: 280px; background: #5a5a5a; height: 14px; margin: 10px; border-top: 1px solid #3f3f3f; border-left: 0px; border-bottom: 0px; overflow: hidden; }         .audiojs .progress { position: absolute; top: 0px; left: 0px; height: 14px; width: 0px; background: #ccc; z-index: 1;           background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #ccc), color-stop(0.5, #ddd), color-stop(0.51, #ccc), color-stop(1, #ccc));           background-image: -moz-linear-gradient(center top, #ccc 0%, #ddd 50%, #ccc 51%, #ccc 100%); }         .audiojs .loaded { position: absolute; top: 0px; left: 0px; height: 14px; width: 0px; background: #000;           background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #222), color-stop(0.5, #333), color-stop(0.51, #222), color-stop(1, #222));           background-image: -moz-linear-gradient(center top, #222 0%, #333 50%, #222 51%, #222 100%); }         .audiojs .time { float: left; height: 36px; line-height: 36px; margin: 0px 0px 0px 6px; padding: 0px 6px 0px 12px; border-left: 1px solid #000; color: #ddd; text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.5); }         .audiojs .time em { padding: 0px 2px 0px 0px; color: #f9f9f9; font-style: normal; }         .audiojs .time strong { padding: 0px 0px 0px 2px; font-weight: normal; }         .audiojs .error-message { float: left; display: none; margin: 0px 10px; height: 36px; width: 400px; overflow: hidden; line-height: 36px; white-space: nowrap; color: #fff;           text-overflow: ellipsis; -o-text-overflow: ellipsis; -icab-text-overflow: ellipsis; -khtml-text-overflow: ellipsis; -moz-text-overflow: ellipsis; -webkit-text-overflow: ellipsis; }         .audiojs .error-message a { color: #eee; text-decoration: none; padding-bottom: 1px; border-bottom: 1px solid #999; white-space: wrap; }                 .audiojs .play { background: url("scripts/vendor/player-graphics.gif") -2px -1px no-repeat; }         .audiojs .loading { background: url("scripts/vendor/player-graphics.gif") -2px -31px no-repeat; }         .audiojs .error { background: url("scripts/vendor/player-graphics.gif") -2px -61px no-repeat; }         .audiojs .pause { background: url("scripts/vendor/player-graphics.gif") -2px -91px no-repeat; }                 @media only screen and (-webkit-min-device-pixel-ratio: 2),           only screen and (min--moz-device-pixel-ratio: 2),           only screen and (min-moz-device-pixel-ratio: 2),           only screen and (-o-min-device-pixel-ratio: 2/1),           only screen and (min-device-pixel-ratio: 2) {             .audiojs .play, .audiojs .loading, .audiojs .error, .audiojs .pause {               background-image: url("scripts/vendor/player-graphics@2x.gif");               -webkit-background-size: 30px 120px;               -moz-background-size: 30px 120px;               -o-background-size: 30px 120px;               background-size: 30px 120px;             }         }                 .playing .play, .playing .loading, .playing .error { display: none; }         .playing .pause { display: block; }                 .loading .play, .loading .pause, .loading .error { display: none; }         .loading .loading { display: block; }                 .error .time, .error .play, .error .pause, .error .scrubber, .error .loading { display: none; }         .error .error { display: block; }         .error .play-pause p { cursor: auto; }         .error .error-message { display: block; }</style>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Soundlab - Music Band &amp; Musician Template</title>
+  <meta name="description" content="">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0">
+
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic|Cousine:400,700|Montserrat:300,400,800|Anton" rel="stylesheet" type="text/css">
+
+  <link href="styles/vendor/bootstrap.css" rel="stylesheet">
+  <link href="styles/vendor/font-awesome.min.css" rel="stylesheet">
+  <link href="styles/vendor/superslides.css" rel="stylesheet">
+  <link href="styles/vendor/owl.carousel.css" rel="stylesheet">
+  <link href="styles/vendor/owl.transitions.css" rel="stylesheet">
+  <link href="styles/vendor/flickity.min.css" rel="stylesheet">
+  <link href="styles/vendor/swipebox.min.css" rel="stylesheet">
+  <link href="styles/vendor/TimeCircles.css" rel="stylesheet">
+
+  <link href="styles/main.css" rel="stylesheet">
+
+  <!-- Intro Slider -->
+  <link href="styles/intro-slider.css" rel="stylesheet">
+  <link href="styles/vendor/animate.min.css" rel="stylesheet">
+
+  <script src="//www.google-analytics.com/analytics.js"></script><script src="scripts/vendor/modernizr.js"></script>
+</head>
+<body class="loaded" data-offset="80" data-target="#navbar-muziq" data-spy="scroll">
+
+  <!-- LOADER -->
+  <div id="mask" style="display: none;">
+    <div class="spinner" style="display: none;">
+      <div class="bounce1"></div>
+      <div class="bounce2"></div>
+      <div class="bounce3"></div>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header class="overflow fixed" id="jHeader">
+    <nav class="navbar navbar-default " role="navigation">
+
+      <div class="navbar-header">
+        <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+          <span class="sr-only">Desplegar navegación</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#anchor00"><img alt="logo" src="images/logo-white.png"></a>
+      </div>
+
+      <div class="collapse navbar-collapse navbar-ex1-collapse" id="navbar-muziq">
+        <ul class="nav navbar-nav navbar-right">
+          <li class="active"><a href="#anchor00">Home</a></li>
+          <li><a href="#anchor03">DISCOGRAPHY</a></li>
+          <li><a href="#anchor04">ABOUT</a></li>
+          <li><a href="#anchor05">TOUR DATES</a></li>
+          <li><a href="#anchor06">GALLERY</a></li>
+          <li><a href="#anchor07">NEWS</a></li>
+          <li><a href="#anchor08">CONTACT</a></li>
+        </ul>
+      </div>
+
+    </nav>
+  </header>
+
+  <!-- INTRO -->
+  <section class="intro full-width jIntro" id="anchor00">
+    <div class="carousel slide carousel-fade" id="intro-carousel" data-pause="false">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#intro-carousel" data-slide-to="0"></li>
+        <li data-target="#intro-carousel" data-slide-to="1"></li>
+        <li data-target="#intro-carousel" data-slide-to="2"></li>
+      </ol>
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner" role="listbox">
+
+        <!-- First slide -->
+        <div class="item intro-fullscreen">
+          <!-- Modify Image BG -->
+          <div class="fill" style="background-image:url('images/demo/slider/intro-slide1.jpg');"></div>
+          <div class="carousel-caption intro-center">
+            <h1 class="primary-title" data-animation="animated fadeIn">Sound Lab</h1>
+            <h2 class="subtitle-text" data-animation="animated fadeIn">Music Band &amp; Musician Template</h2>
+            <div class="voffset50"></div>
+            <div class="animate-btn" data-animation="animated fadeInUp">
+              <input name="button" class="btn square stay-in-touch-submit" type="submit" value="Buy Template">
+            </div>
+          </div>
+        </div><!-- /.item -->
+
+        <!-- Second slide -->
+        <div class="item active left">
+          <!-- Modify Image BG -->
+          <div class="fill" style="background-image:url('images/demo/slider/intro-slide2.jpg');"></div>
+          <div class="carousel-caption p-intro-animate">
+            <p data-animation="animated fadeIn">We are a <span>electronic band,</span> focused on<br>electro and techno &amp; clubbing.</p>
+            <a class="intro-link" href="#0" data-animation="animated fadeIn">Let’s Connect <i class="fa  fa-angle-right"></i></a>
+          </div>
+        </div><!-- /.item -->
+
+        <!-- Third slide -->
+        <div class="item title-alt next left">
+          <!-- Modify Image BG -->
+          <div class="fill" style="background-image:url('images/demo/slider/intro-slide3.jpg');"></div>
+          <div class="carousel-caption">
+            <p class="animated fadeInUp" data-animation="animated fadeInUp">New Album<br>Release</p>
+            <div class="animate-btn-alt animated fadeInUp" data-animation="animated fadeInUp">
+              <input name="button" class="btn square stay-in-touch-submit" type="submit" value="Listen Album">
+            </div>
+          </div>
+        </div><!-- /.item -->
+
+      </div><!-- /.carousel-inner -->
+    </div><!-- /.carousel -->
+  </section>
+
+  <!-- PLAYER -->
+  <div class="player horizontal">
+    <div class="container">
+      <div class="info-album-player">
+        <div class="album-cover" id="bg-image3" style="background: url('images/demo/cover-player.jpg') no-repeat center"></div>
+        <p class="album-title">Spectrum</p>
+        <p class="artist-name">Album by Blummsday</p>
+      </div>
+      <div class="player-content">
+        <div class="audiojs " id="audiojs_wrapper1" classname="audiojs"><audio src="mp3/01.mp3" preload=""></audio>          <div class="play-pause">             <p class="play"></p>             <p class="pause"></p>             <p class="loading"></p>             <p class="error"></p>           </div>           <div class="scrubber">             <div class="progress" style="width: 0%;"></div>             <div class="loaded" style="width: 100%;"></div>           </div>           <div class="time">             <em class="played">00:00</em>/<strong class="duration">00:32</strong>           </div>           <div class="error-message"></div></div>
+        <ol class="playlist">
+          <li class="playing"><a href="#" data-src="mp3/01.mp3">Destiny</a></li>
+          <li><a href="#" data-src="mp3/02.mp3">Sunless</a></li>
+          <li><a href="#" data-src="mp3/03.mp3">Deep inspire</a></li>
+        </ol>
+        <div class="nextprev">
+          <span class="prev">prev</span>
+          <span class="next">next</span>
+        </div>
+        <span class="btnloop">loop</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- LATEST ALBUM -->
+  <section class="section latest-album" id="anchor01">
+    <div class="container">
+      <div class="voffset70"></div>
+      <div class="title-wrapper">
+        <h2 class="title">LATEST ALBUM</h2>
+      </div>
+      <div class="voffset80"></div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <div class="info-album">
+            <div class="cover">
+              <img alt="" src="images/demo/albums/cover.jpg">
+            </div>
+            <p class="album album-list">Perfect Symmetry</p>
+            <p class="artist">Keane</p>
+            <div class="voffset20"></div>
+            <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae omnis, debitis.</p>
+            <p class="buyalbum">
+              <a class="btn square inverse" href="#">buy album</a>
+            </p>
+            <ul class="links">
+              <li><a href="#">itunes</a></li>
+              <li><a href="#">spotify</a></li>
+              <li><a href="#">beatport</a></li>
+            </ul>
+            <div class="voffset80"></div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="disc-tracklist">
+            <div class="audiojs " id="audiojs_wrapper0" classname="audiojs"><audio id="playlist_newalbum" src="mp3/01.mp3" preload=""></audio>          <div class="play-pause">             <p class="play"></p>             <p class="pause"></p>             <p class="loading"></p>             <p class="error"></p>           </div>           <div class="scrubber">             <div class="progress" style="width: 0%;"></div>             <div class="loaded" style="width: 100%;"></div>           </div>           <div class="time">             <em class="played">00:00</em>/<strong class="duration">00:32</strong>           </div>           <div class="error-message"></div></div>
+            <ol class="playlist1">
+              <li class="pause">
+                <a href="#" data-src="mp3/01.mp3">
+                  <div class="track-info">
+                    <p class="track-title">We Exist</p>
+                    <p class="track-album">Perfect Symmetry</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#" data-src="mp3/02.mp3">
+                  <div class="track-info">
+                    <p class="track-title">It´s Never Over</p>
+                    <p class="track-album">Perfect Symmetry</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#" data-src="mp3/03.mp3">
+                  <div class="track-info">
+                    <p class="track-title">Exploration</p>
+                    <p class="track-album">Perfect Symmetry</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#" data-src="mp3/01.mp3">
+                  <div class="track-info">
+                    <p class="track-title">Plymouth Fury</p>
+                    <p class="track-album">Perfect Symmetry</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#" data-src="mp3/02.mp3">
+                  <div class="track-info">
+                    <p class="track-title">They Return</p>
+                    <p class="track-album">Perfect Symmetry</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#" data-src="mp3/03.mp3">
+                  <div class="track-info">
+                    <p class="track-title">Ultraviolet</p>
+                    <p class="track-album">Perfect Symmetry</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#" data-src="mp3/01.mp3">
+                  <div class="track-info">
+                    <p class="track-title">Post Operative</p>
+                    <p class="track-album">Perfect Symmetry</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#" data-src="mp3/02.mp3">
+                  <div class="track-info">
+                    <p class="track-title">Escape</p>
+                    <p class="track-album">Perfect Symmetry</p>
+                  </div>
+                </a>
+              </li>
+            </ol>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STAY IN TOUCH -->
+  <section class="section stay-in-touch inverse-color parallax-section" id="anchor02" style='background-position: center; background-image: url("images/demo/stay-in-touch/bg-stay-in-touch.jpg"); background-repeat: repeat; background-attachment: inherit; background-clip: border-box; background-origin: padding-box; background-size: cover; background-color: transparent;' data-parallax-image="images/demo/stay-in-touch/bg-stay-in-touch.jpg">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-md-6">
+          <div class="voffset190"></div>
+          <p class="titulo">Stay in<br> Touch</p>
+          <div class="voffset20"></div>
+          <p class="cousine subtitulo">Subscribe for free downloads and news updates.</p>
+          <div class="voffset30"></div>
+          <label for="stay-in-touch-email">YOUR EMAIL</label>
+          <form action="index.html" method="post">
+            <div class="row">
+              <div class="col-xs-12 col-sm-8">
+                <input name="stay-in-touch-email" id="stay-in-touch-email" type="text" value="">
+              </div>
+              <div class="col-xs-12 col-sm-4">
+                <input name="button" class="btn square stay-in-touch-submit" type="submit" value="GET STARTED">
+              </div>
+            </div>
+          </form>
+          <div class="voffset190"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DISCOGRAPHY -->
+  <section class="section discography" id="anchor03">
+    <div id="discography"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="voffset70"></div>
+          <div class="title-wrapper">
+            <h2 class="title">Discography</h2>
+          </div>
+          <div class="voffset80"></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <ul tabindex="0" class="carousel-discography js-flickity flickity-enabled is-draggable" data-flickity-options='{&#10;            "cellAlign": "center", "wrapAround": false,&#10;            "contain": false, "prevNextButtons": false,&#10;            "imagesLoaded": true&#10;          }'>
+          <!-- col-xlg-3 -->
+          
+          
+          
+
+
+        <div class="flickity-viewport" style="height: 1589px;"><div class="flickity-slider" style="left: 0px; transform: translateX(0%);"><li class="gallery-cell col-xs-12 is-selected" style="left: 0%; position: absolute;">
+
+            <div class="row">
+
+              <div class="col-xs-12 col-md-6 item-disc">
+                <div class="info-album">
+                  <div class="cover open-disc" data-url="discs/disc-01.html">
+                    <img alt="" src="images/demo/albums/cover1.jpg">
+                    <div class="rollover">
+                      <i class="plus"></i>
+                      <p>view album</p>
+                    </div>
+                  </div>
+                  <p class="album">Perfect symmetry</p>
+                  <p class="artist">Keane</p>
+                </div>
+              </div>
+
+              <div class="col-xs-12 col-md-6 item-disc">
+                <div class="info-album">
+                  <div class="cover open-disc" data-url="discs/disc-02.html">
+                    <img alt="" src="images/demo/albums/cover2.jpg">
+                    <div class="rollover">
+                      <i class="plus"></i>
+                      <p>view album</p>
+                    </div>
+                  </div>
+                  <p class="album">BLACK RAINBOW</p>
+                  <p class="artist">Keane</p>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12 col-md-6 item-disc">
+                <div class="info-album">
+                  <div class="cover open-disc" data-url="discs/disc-03.html">
+                    <img alt="" src="images/demo/albums/cover3.jpg">
+                    <div class="rollover">
+                      <i class="plus"></i>
+                      <p>view album</p>
+                    </div>
+                  </div>
+                  <p class="album">DYNAMIC ENERGY</p>
+                  <p class="artist">Keane</p>
+                </div>
+              </div>
+              <div class="col-xs-12 col-md-6 item-disc">
+                <div class="info-album">
+                  <div class="cover open-disc" data-url="discs/disc-04.html">
+                    <img alt="" src="images/demo/albums/cover4.jpg">
+                    <div class="rollover">
+                      <i class="plus"></i>
+                      <p>view album</p>
+                    </div>
+                  </div>
+                  <p class="album">Under the iron sea</p>
+                  <p class="artist">Keane</p>
+                </div>
+              </div>
+            </div>
+
+          </li><li class="gallery-cell col-xs-12" style="left: 100%; position: absolute;">
+
+            <div class="row">
+
+              <div class="col-xs-12 col-md-6 item-disc">
+                <div class="info-album">
+                  <div class="cover open-disc" data-url="discs/disc-01.html">
+                    <img alt="" src="images/demo/albums/cover1.jpg">
+                    <div class="rollover">
+                      <i class="plus"></i>
+                      <p>view album</p>
+                    </div>
+                  </div>
+                  <p class="album">Perfect symmetry</p>
+                  <p class="artist">Keane</p>
+                </div>
+              </div>
+
+              <div class="col-xs-12 col-md-6 item-disc">
+                <div class="info-album">
+                  <div class="cover open-disc" data-url="discs/disc-02.html">
+                    <img alt="" src="images/demo/albums/cover2.jpg">
+                    <div class="rollover">
+                      <i class="plus"></i>
+                      <p>view album</p>
+                    </div>
+                  </div>
+                  <p class="album">BLACK RAINBOW</p>
+                  <p class="artist">Keane</p>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12 col-md-6 item-disc">
+                <div class="info-album">
+                  <div class="cover open-disc" data-url="discs/disc-03.html">
+                    <img alt="" src="images/demo/albums/cover3.jpg">
+                    <div class="rollover">
+                      <i class="plus"></i>
+                      <p>view album</p>
+                    </div>
+                  </div>
+                  <p class="album">DYNAMIC ENERGY</p>
+                  <p class="artist">Keane</p>
+                </div>
+              </div>
+              <div class="col-xs-12 col-md-6 item-disc">
+                <div class="info-album">
+                  <div class="cover open-disc" data-url="discs/disc-04.html">
+                    <img alt="" src="images/demo/albums/cover4.jpg">
+                    <div class="rollover">
+                      <i class="plus"></i>
+                      <p>view album</p>
+                    </div>
+                  </div>
+                  <p class="album">Under the iron sea</p>
+                  <p class="artist">Keane</p>
+                </div>
+              </div>
+            </div>
+
+          </li><li class="gallery-cell col-xs-12" style="left: 200%; position: absolute;">
+
+            <div class="row">
+
+              <div class="col-xs-12 col-md-6 item-disc">
+                <div class="info-album">
+                  <div class="cover open-disc" data-url="discs/disc-01.html">
+                    <img alt="" src="images/demo/albums/cover1.jpg">
+                    <div class="rollover">
+                      <i class="plus"></i>
+                      <p>view album</p>
+                    </div>
+                  </div>
+                  <p class="album">Perfect symmetry</p>
+                  <p class="artist">Keane</p>
+                </div>
+              </div>
+
+              <div class="col-xs-12 col-md-6 item-disc">
+                <div class="info-album">
+                  <div class="cover open-disc" data-url="discs/disc-02.html">
+                    <img alt="" src="images/demo/albums/cover2.jpg">
+                    <div class="rollover">
+                      <i class="plus"></i>
+                      <p>view album</p>
+                    </div>
+                  </div>
+                  <p class="album">BLACK RAINBOW</p>
+                  <p class="artist">Keane</p>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12 col-md-6 item-disc">
+                <div class="info-album">
+                  <div class="cover open-disc" data-url="discs/disc-03.html">
+                    <img alt="" src="images/demo/albums/cover3.jpg">
+                    <div class="rollover">
+                      <i class="plus"></i>
+                      <p>view album</p>
+                    </div>
+                  </div>
+                  <p class="album">DYNAMIC ENERGY</p>
+                  <p class="artist">Keane</p>
+                </div>
+              </div>
+              <div class="col-xs-12 col-md-6 item-disc">
+                <div class="info-album">
+                  <div class="cover open-disc" data-url="discs/disc-04.html">
+                    <img alt="" src="images/demo/albums/cover4.jpg">
+                    <div class="rollover">
+                      <i class="plus"></i>
+                      <p>view album</p>
+                    </div>
+                  </div>
+                  <p class="album">Under the iron sea</p>
+                  <p class="artist">Keane</p>
+                </div>
+              </div>
+            </div>
+
+          </li></div></div><ol class="flickity-page-dots"><li class="dot is-selected"></li><li class="dot"></li><li class="dot"></li></ol></ul>
+        <div class="voffset100"></div>
+      </div>
+    </div>
+  </div>
+  <!-- DETAILS DISCO -->
+  <div id="project-show"></div>
+  <div class="section player-album project-window">
+    <div class="project-content"></div><!-- AJAX Dinamic Content -->
+  </div>
+</section>
+
+<!-- BIOGRAPHY -->
+<section class="section container-fluid full-width biography" id="anchor04">
+
+  <div class="row">
+    <div class="col-xs-12 col-md-4 col-md-offset-1 biography-description">
+      <h2 class="title inverse">biography</h2>
+      <div class="voffset40"></div>
+      <p class="cousine">Southern Avenue is a Memphis street that runs from the easternmost part of the city limits all the way to Soulsville, the original home of Stax Records. Southern Avenue is also the name of a fiery young Memphis quintet that embodies its home city's soul, blues and gospel traditions, while adding a youthful spirit and dynamic energy all their own. “If Memphis is a genre, this is it!” proclaims American Blues Scene and Rock 103FM calls Southern Avenue - “The most talked about band in Memphis.”</p>
+      <div class="voffset40"></div>
+      <p class="montserrat extra-bold cita">
+        “If I can play one note and make you cry, then that's better than those fancy dancers playing twenty notes.”
+      </p>
+      <br>
+      <p>
+        <img alt="" src="images/demo/biography/sign.png">
+      </p>
+    </div>
+    <div class="col-xs-12 col-md-6 col-sm-offset-1 biography-image">
+    </div>
+  </div>
+
+
+</section>
+
+<!-- NEXT SHOW -->
+<section class="section next-show" id="anchor05">
+  <div class="container">
+    <div class="voffset150"></div>
+
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="title-wrapper">
+          <h2 class="next-show-title">Next Show</h2>
+        </div>
+      </div>
+    </div>
+    <div class="voffset30"></div>
+    <hr>
+    <div class="voffset20"></div>
+    <p class="text-center next-show-subtitle">I‘m Ready for my new gig in Toronto (Canada)</p>
+    <div class="voffset90"></div>
+    <div class="row">
+      <div class="col-xs-12 text-center">
+        <div class="countdown" data-date="2018-12-01"><div class="countdown-container days"><span class="countdown-value days-bottom">44</span><span class="countdown-heading days-top">Days</span></div><div class="countdown-container hours"><span class="countdown-value hours-bottom">09</span><span class="countdown-heading hours-top">Hours</span></div><div class="countdown-container minutes"><span class="countdown-value minutes-bottom">02</span><span class="countdown-heading minutes-top">Minutes</span></div><div class="countdown-container seconds"><span class="countdown-value seconds-bottom">59</span><span class="countdown-heading seconds-top">Seconds</span></div></div>
+      </div>
+    </div>
+    <div class="voffset150"></div>
+  </div>
+</section>
+
+<!-- UPCOMMING EVENTS -->
+<section class="section container-fluid full-width upcomming-events-list inverse-color">
+  <div>
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <h4 class="upcomming-events-list-title montserrat extra-bold">upcoming events</h4>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <ul>
+          <li>
+            <div>
+              <p class="date-event">21 <span>Jan'16</span></p>
+              <p class="name">
+                <span>Live show  New York</span>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab enim perferendis, doloremque esse.
+              </p>
+              <p class="venue">
+                venue
+                <span>Madison Square Garden</span>
+              </p>
+              <p class="price">
+                tickets
+                <span>$19</span>
+              </p>
+              <p class="buy">
+                <a class="btn square icon" href="#"><i class="fa fa-ticket"></i> buy ticket</a>
+              </p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <p class="date-event">25 <span>Jan'16</span></p>
+              <p class="name">
+                <span>Dj Set &amp; performance Los Angeles</span>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab enim perferendis, doloremque esse.
+              </p>
+              <p class="venue">
+                venue
+                <span>Glam Club</span>
+              </p>
+              <p class="price">
+                tickets
+                <span>$19</span>
+              </p>
+              <p class="buy">
+                <a class="btn square icon" href="#"><i class="fa fa-ticket"></i> buy ticket</a>
+              </p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <p class="date-event">01 <span>Feb'16</span></p>
+              <p class="name">
+                <span>Live Show  Boston</span>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab enim perferendis, doloremque esse.
+              </p>
+              <p class="venue">
+                venue
+                <span>Howard Theater</span>
+              </p>
+              <p class="price">
+                tickets
+                <span>$19</span>
+              </p>
+              <p class="buy">
+                <a class="btn square icon" href="#"><i class="fa fa-ticket"></i> buy ticket</a>
+              </p>
+            </div>
+          </li>
+
+          <li class="more">
+            <div>
+              <p class="date-event">15 <span>Feb'16</span></p>
+              <p class="name">
+                <span>Dj Set &amp; performance Los Angeles</span>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab enim perferendis, doloremque esse.
+              </p>
+              <p class="venue">
+                venue
+                <span>Sugar Night Club</span>
+              </p>
+              <p class="price">
+                tickets
+                <span>$19</span>
+              </p>
+              <p class="buy">
+                <a class="btn square icon" href="#"><i class="fa fa-ticket"></i> buy ticket</a>
+              </p>
+            </div>
+          </li>
+          <li class="more">
+            <div>
+              <p class="date-event">24 <span>Feb'16</span></p>
+              <p class="name">
+                <span>Live Show London</span>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab enim perferendis, doloremque esse.
+              </p>
+              <p class="venue">
+                venue
+                <span>Monarch Theater</span>
+              </p>
+              <p class="price">
+                tickets
+                <span>$19</span>
+              </p>
+              <p class="buy">
+                <a class="btn square icon" href="#"><i class="fa fa-ticket"></i> buy ticket</a>
+              </p>
+            </div>
+          </li>
+          <li class="more">
+            <div>
+              <p class="date-event">05 <span>Mar'16</span></p>
+              <p class="name">
+                <span>Live Show  New York</span>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab enim perferendis, doloremque esse.
+              </p>
+              <p class="venue">
+                venue
+                <span>Madison Square Garden</span>
+              </p>
+              <p class="price">
+                tickets
+                <span>$19</span>
+              </p>
+              <p class="buy">
+                <a class="btn square icon" href="#"><i class="fa fa-ticket"></i> buy ticket</a>
+              </p>
+            </div>
+          </li>
+        </ul>
+        <p class="view-all-events">
+          <a class="btn square" id="more-events" href="#">View all events</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="section last-media" id="anchor06">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <div class="voffset90"></div>
+        <div class="title-wrapper">
+          <h2 class="title">GALLERY</h2>
+        </div>
+        <div class="voffset50"></div>
+      </div>
+    </div>
+    <!-- Filters -->
+    <div class="row">
+      <div class="col-md-12">
+        <ul class="filters">
+          <li class="is-checked wow fadeInUp" data-wow-delay="0.5s" data-filter="*">All</li>
+          <li class="wow fadeInUp" data-wow-delay="0.8s" data-filter=".image">Image</li>
+          <li class="wow fadeInUp" data-wow-delay="1s" data-filter=".video">Video</li>
+        </ul>
+      </div>
+    </div>
+    <!-- gallery -->
+    <div class="row">
+      <div class="col-md-12">
+        <div class="voffset50"></div>
+        <div class="thumbnails" style="height: 1053.12px; position: relative;">
+          <div class="thumbnail video" style="left: 0px; top: 0px; position: absolute;">
+            <a class="swipebox" href="https://vimeo.com/5182570"> <!-- data-fancybox-type="iframe" -->
+              <img alt="" src="images/demo/gallery/gallery1.jpg">
+              <div class="rollover">
+                <i class="video"></i>
+              </div>
+            </a>
+          </div>
+          <div class="thumbnail video" style="left: 0px; top: 210px; position: absolute;">
+            <a class="swipebox" href="images/demo/gallery/gallery2.jpg">
+              <img alt="" src="images/demo/gallery/gallery2.jpg">
+              <div class="rollover">
+                <i class="plus"></i>
+              </div>
+            </a>
+          </div>
+          <div class="thumbnail image" style="left: 0px; top: 373px; position: absolute;">
+            <a class="swipebox" href="images/demo/gallery/gallery3.jpg">
+              <img alt="" src="images/demo/gallery/gallery3.jpg">
+              <div class="rollover">
+                <i class="plus"></i>
+              </div>
+            </a>
+          </div>
+          <div class="thumbnail image" style="left: 0px; top: 535px; position: absolute;">
+            <a class="swipebox" href="images/demo/gallery/gallery4.jpg">
+              <img alt="" src="images/demo/gallery/gallery4.jpg">
+              <div class="rollover">
+                <i class="plus"></i>
+              </div>
+            </a>
+          </div>
+          <div class="thumbnail image" style="left: 0px; top: 842px; position: absolute;">
+            <a class="swipebox" href="images/demo/gallery/gallery5.jpg">
+              <img alt="" src="images/demo/gallery/gallery5.jpg">
+              <div class="rollover">
+                <i class="plus"></i>
+              </div>
+            </a>
+          </div>
+
+        </div>
+        <div class="voffset50"></div>
+        <p class="loadmore">
+          <a class="btn square inverse" id="append" href="#">Load more</a>
+        </p>
+        <div id="more-items">
+          <div class="thumbnail image">
+            <a class="swipebox" href="images/demo/gallery/gallery1.jpg">
+              <img alt="" src="images/demo/gallery/gallery1.jpg">
+              <div class="rollover">
+                <i class="plus"></i>
+              </div>
+            </a>
+          </div>
+          <div class="thumbnail image">
+            <a class="swipebox" href="images/demo/gallery/gallery2.jpg">
+              <img alt="" src="images/demo/gallery/gallery2.jpg">
+              <div class="rollover">
+                <i class="plus"></i>
+              </div>
+            </a>
+          </div>
+          <div class="thumbnail image">
+            <a class="swipebox" href="images/demo/gallery/gallery3.jpg">
+              <img alt="" src="images/demo/gallery/gallery3.jpg">
+              <div class="rollover">
+                <i class="plus"></i>
+              </div>
+            </a>
+          </div>
+          <div class="thumbnail image">
+            <a class="swipebox" href="images/demo/gallery/gallery4.jpg">
+              <img alt="" src="images/demo/gallery/gallery4.jpg">
+              <div class="rollover">
+                <i class="plus"></i>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="voffset90"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEW VIDEO -->
+<div class="section new-video">
+  <div class="container">
+    <div class="row text-center">
+      <div class="col-xs-12">
+        <div class="voffset70"></div>
+        <div class="title-wrapper">
+          <h2 class="title inverse">NEW VIDEO</h2>
+        </div>
+        <div class="voffset70"></div>
+        <iframe width="1060" height="596" src="https://player.vimeo.com/video/184417111?color=ffffff" frameborder="0" allowfullscreen="" mozallowfullscreen="" webkitallowfullscreen=""></iframe>
+      </div>
+    </div>
+    <div class="voffset70"></div>
+  </div>
+</div>
+
+<!-- NEWS -->
+<div class="section blog list-posts" id="anchor07">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <div class="voffset70"></div>
+        <div class="title-wrapper">
+          <h2 class="title">on the blog</h2>
+        </div>
+        <div class="voffset80"></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <article class="post-item">
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="photo-post" id="image-post1" style="background: url('images/demo/blog/post1.jpg') no-repeat center"></div>
+              <p class="date">
+                <span class="day">01</span>
+                <span class="month">feb</span>
+              </p>
+            </div>
+            <div class="col-sm-6">
+              <div class="voffset30"></div>
+              <h4 class="title small"><span>Posted by:</span> admin | music, concert</h4>
+              <h3 class="title post">KYgo Brings the tropical house feels on new single 'stay'</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed repudiandae, officiis. Maxime neque similique doloremque eveniet, minima, quam perspiciatis, dolore, sapiente quisquam error tenetur rem vitae ratione. Atque, asperiores voluptatem?</p>
+              <span class="btn rounded close-new">view less</span>
+              <a class="btn square inverse" href="blog-post.html" data-url="new-01.html">Read more</a>
+              <section class="section news-window">
+                <div class="news-content"></div><!-- AJAX Dinamic Content -->
+              </section>
+            </div>
+          </div>
+        </article>
+        <article class="post-item">
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="photo-post" id="image-post2" style="background: url('images/demo/blog/post2.jpg') no-repeat center"></div>
+              <p class="date">
+                <span class="day">20</span>
+                <span class="month">jan</span>
+              </p>
+            </div>
+            <div class="col-sm-6">
+              <div class="voffset30"></div>
+              <h4 class="title small"><span>Posted by:</span> admin | music, concert</h4>
+              <h3 class="title post">KYgo Brings the tropical house feels on new single 'stay'</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed repudiandae, officiis. Maxime neque similique doloremque eveniet, minima, quam perspiciatis, dolore, sapiente quisquam error tenetur rem vitae ratione. Atque, asperiores voluptatem?</p>
+              <span class="btn rounded close-new">view less</span>
+              <a class="btn square inverse" href="blog-post.html" data-url="new-01.html">Read more</a>
+              <section class="section news-window">
+                <div class="news-content"></div><!-- AJAX Dinamic Content -->
+              </section>
+            </div>
+          </div>
+        </article>
+        <article class="post-item">
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="photo-post" id="image-post3" style="background: url('images/demo/blog/post3.jpg') no-repeat center"></div>
+              <p class="date">
+                <span class="day">18</span>
+                <span class="month">jan</span>
+              </p>
+            </div>
+            <div class="col-sm-6">
+              <div class="voffset30"></div>
+              <h4 class="title small"><span>Posted by:</span> admin | music, concert</h4>
+              <h3 class="title post">KYgo Brings the tropical house feels on new single 'stay'</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed repudiandae, officiis. Maxime neque similique doloremque eveniet, minima, quam perspiciatis, dolore, sapiente quisquam error tenetur rem vitae ratione. Atque, asperiores voluptatem?</p>
+              <span class="btn rounded close-new">view less</span>
+              <a class="btn square inverse" href="blog-post.html" data-url="new-01.html">Read more</a>
+              <section class="section news-window">
+                <div class="news-content"></div><!-- AJAX Dinamic Content -->
+              </section>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+    <div class="voffset40"></div>
+  </div>
+</div>
+
+<!-- CONTACTS -->
+<section class="section inverse-color contact" id="anchor08">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <div class="voffset70"></div>
+        <div class="title-wrapper">
+          <h2 class="title inverse">follow &amp; contact</h2>
+        </div>
+        <div class="voffset100"></div>
+      </div>
+    </div>
+    <div class="row no-gutter">
+      <div class="col-xs-12 col-md-3 text-center">
+        <h2 class="title-follow">MGMT</h2>
+        <div class="voffset40"></div>
+        <hr class="hidden-xs">
+        <div class="voffset40"></div>
+        <p class="name">Jhon Smith</p>
+        <p class="phone"><a href="tel:+1-456-768-9864">T+1-456-768-9864</a></p>
+        <p class="email"><a href="mailto:mgtm@music.com">mgtm@music.com</a></p>
+        <div class="voffset40"></div>
+
+        <hr class="hidden-xs">
+      </div>
+      <div class="col-xs-12 col-md-3 text-center">
+        <h2 class="title-follow">BOOKING</h2>
+        <div class="voffset40"></div>
+        <hr class="hidden-xs">
+        <div class="voffset40"></div>
+        <p class="name">Natalia Portman</p>
+        <p class="phone"><a href="tel:+1-456-768-9864">T+1-456-768-9864</a></p>
+        <p class="email"><a href="mailto:booking@music.com">booking@music.com</a></p>
+        <div class="voffset40"></div>
+        <hr class="hidden-xs">
+      </div>
+      <div class="col-xs-12 col-md-3 text-center">
+        <h2 class="title-follow">press</h2>
+        <div class="voffset40"></div>
+        <hr class="hidden-xs">
+        <div class="voffset40"></div>
+        <p class="name">Matt More</p>
+        <p class="phone"><a href="tel:+1-456-768-9864">T+1-456-768-9864</a></p>
+        <p class="email"><a href="mailto:press@music.com">press@music.com</a></p>
+        <div class="voffset40"></div>
+        <hr class="hidden-xs">
+      </div>
+      <div class="col-xs-12 col-md-3 text-center">
+        <h2 class="title-follow">info</h2>
+        <div class="voffset40"></div>
+        <hr class="hidden-xs">
+        <div class="voffset40"></div>
+        <p class="name">Jackson Five</p>
+        <p class="phone"><a href="tel:+1-456-768-9864">T+1-456-768-9864</a></p>
+        <p class="email"><a href="mailto:info@music.com">info@music.com</a></p>
+        <div class="voffset40"></div>
+        <hr class="hidden-xs">
+      </div>
+    </div>
+
+    <div class="row social">
+      <a href="#"><img alt="logo01" src="images/demo/social/logo01.png"></a>
+      <a href="#"><img alt="logo02" src="images/demo/social/logo02.png"></a>
+      <a href="#"><img alt="logo03" src="images/demo/social/logo03.png"></a>
+      <a href="#"><img alt="logo04" src="images/demo/social/logo04.png"></a>
+      <a href="#"><img alt="logo05" src="images/demo/social/logo05.png"></a>
+    </div>
+
+    <div class="voffset80"></div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <p class="copy">© 2017. All Rights Reserved. Designed by JellyThemes</p>
+    <ul class="menu-footer">
+      <li><a href="#">disclaimer</a></li>
+      <li><a href="#">terms &amp; conditions</a></li>
+      <li><a href="#">privacy policy</a></li>
+    </ul>
+  </div>
+</footer>
+
+<!--[if lt IE 7]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
+
+<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+<script>
+(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+  function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+  e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+  e.src='//www.google-analytics.com/analytics.js';
+  r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+  ga('create','UA-XXXXX-X');ga('send','pageview');
+  </script>
+
+  <script src="scripts/vendor/jquery.js"></script>
+  <script src="scripts/vendor/jquery.superslides.min.js"></script>
+  <script src="scripts/vendor/flickity.pkgd.js"></script>
+  <script src="scripts/vendor/audio.min.js"></script>
+  <script src="scripts/vendor/twitterFetcher_min.js"></script>
+  <script src="scripts/vendor/isotope.pkgd.min.js"></script>
+  <script src="scripts/vendor/jquery.swipebox.min.js"></script>
+  <script src="scripts/vendor/TimeCircles.js"></script>
+  <script src="scripts/vendor/owl.carousel.min.js"></script>
+  <script src="scripts/vendor/jquery.parallax.min.js"></script>
+
+  <script src="scripts/discography.js"></script>
+  <script src="scripts/news.js"></script>
+  <script src="scripts/main.js"></script>
+
+  <script src="scripts/vendor/bootstrap.js"></script>
+
+  <!-- Intro Slider -->
+  <script src="scripts/intro-slider.js"></script>
+  <!-- Countdown Next Show -->
+  <script src="scripts/vendor/countdown.js"></script>
+
+
+</body><iframe id="oneNoteWebClipper" src="ms-browser-extension://EdgeExtension_MicrosoftOneNoteWebClipper_8wekyb3d8bbwe/clipper.html" style="margin: 0px; padding: 0px; border: medium; transition: initial; border-image: none; left: auto; top: 0px; width: 349px; height: 76px; right: 0px; bottom: auto; overflow: hidden; display: none; position: fixed; z-index: 2147483647; min-height: 0px; max-height: none; min-width: 0px; max-width: none;"></iframe></html>
